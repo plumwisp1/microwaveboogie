@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  display: grid;
+  place-items: center; /* Align items to the center of the grid cell */
+  height: 95vh;
+}
+
+button {
+background-color: transparent;
+border: 0px
+}
+
+.hidden {
+display: none;
+}
+
+.finalText {
+display: none;
+font-family: "Inter", sans-serif;
+font-size: 3rem;
+position: absolute;
+width:40;
+bottom: 50px;
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<audio id="phone_ring.mp3">
+	<source src="media/phone_ring.mp3" type="audio/mpeg">
+</audio>
+<audio id="3rd.mp3">
+	<source src="media/3rd.mp3" type="audio/mpeg">
+</audio>
+<audio id="bomb_sound.mp3">
+	<source src="media/bomb_sound.mp3" type="audio/mpeg">
+</audio>
+
+<div>
+	<button id="button1" onclick="document.getElementById('microwaveClosed').src='media/microwave_with_phone.png'
+	;playAudio();switchImage()">
+	<img id="microwaveClosed" src="media/microwave_closed.png" style="width:40%">
+	</button>
+
+	<button class="hidden" id="button2" onclick="bringPhoneOut();">
+	<img id="microwavePhone" src="media/microwave_with_phone.png" style="width:40%">
+	</button>
+
+	<img class="hidden" id="microwaveListen" src="media/phone.png" style="width:80%;position: relative;bottom: 50px">
+
+	<img class="hidden" id="explosionGif" src="media/explosion.gif" style="width:80%;position: relative;bottom: 300px;left: 50px">
+
+	<img class="hidden" id="ash" src="media/ash.jpg" style="width:40%;position: absolute">
+
+	<h1 id="finalText" class="finalText">All music written and produced by Michael Joseph Glick <br>Coming Soon...</h1>
+</div>
+
+<script>
+var x = document.getElementById("phone_ring.mp3"); 
+var y = document.getElementById("3rd.mp3");
+var z = document.getElementById("bomb_sound.mp3");
+x.volume = 0.25;
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function playSecondAudio() {
+	y.play();
+}
+
+function playThirdAudio() {
+	z.play();
+}
+
+function switchImage() {
+	var image1 = document.getElementById("button1");
+	var image2 = document.getElementById("button2");
+	button1.style.display = "none";
+	button2.style.display = "block";
+}
+
+function bringPhoneOut() {
+	x.pause();
+	button2.style.display = "none";
+	microwaveListen.style.display = "block";
+	setTimeout(playSecondAudio, 2000);
+	setTimeout(explosionFunction, 35000);
+}
+
+function explosionFunction() {
+	var ash = document.getElementById("ash")
+	microwaveListen.style.display = "none";
+	y.pause();
+	explosionGif.style.display = "block"
+	playThirdAudio();
+	setTimeout(ashAppear, 3000)
+}
+
+function ashAppear() {
+	explosionGif.style.display = "none";
+	ash.style.display = "block";
+	setTimeout(textAppear,2000);
+}
+
+function textAppear() {
+	finalText.style.display = "block";
+}
+</script>
+</body>
+</html>
