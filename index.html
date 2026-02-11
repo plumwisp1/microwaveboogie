@@ -32,30 +32,30 @@ text-align: center;
 <body>
 
 <audio id="phone_ring.mp3">
-	<source src="media/phone_ring.mp3" type="audio/mpeg">
+	<source src="../media/phone_ring.mp3" type="audio/mpeg">
 </audio>
 <audio id="3rd.mp3">
-	<source src="media/3rd.mp3" type="audio/mpeg">
+	<source src="../media/3rd.mp3" type="audio/mpeg">
 </audio>
 <audio id="bomb_sound.mp3">
-	<source src="media/bomb_sound.mp3" type="audio/mpeg">
+	<source src="../media/bomb_sound.mp3" type="audio/mpeg">
 </audio>
 
 <div>
-	<button id="button1" onclick="document.getElementById('microwaveClosed').src='media/microwave_with_phone.png'
+	<button id="button1" onclick="document.getElementById('microwaveClosed').src="../media/microwave_with_phone.png"
 	;playAudio();switchImage()">
-	<img id="microwaveClosed" src="media/microwave_closed.png" style="width:40%">
+	<img id="microwaveClosed" src="../media/microwave_closed.png" style="width:40%">
 	</button>
 
 	<button class="hidden" id="button2" onclick="bringPhoneOut();">
-	<img id="microwavePhone" src="media/microwave_with_phone.png" style="width:40%">
+	<img id="microwavePhone" src="../media/microwave_with_phone.png" style="width:40%">
 	</button>
 
-	<img class="hidden" id="microwaveListen" src="media/phone.png" style="width:80%;position: relative;bottom: 50px">
+	<img class="hidden" id="microwaveListen" src="../media/phone.png" style="width:80%;position: relative;bottom: 50px">
 
-	<img class="hidden" id="explosionGif" src="media/explosion.gif" style="width:80%;position: relative;bottom: 300px;left: 50px">
+	<img class="hidden" id="explosionGif" src="../media/explosion.gif" style="width:80%;position: relative;bottom: 300px;left: 50px">
 
-	<img class="hidden" id="ash" src="media/ash.jpg" style="width:40%;position: absolute">
+	<img class="hidden" id="ash" src="../media/ash.jpg" style="width:40%;position: absolute">
 
 	<h1 id="finalText" class="finalText">All music written and produced by Michael Joseph Glick <br>Coming Soon...</h1>
 </div>
@@ -113,4 +113,5 @@ function textAppear() {
 }
 </script>
 </body>
+
 </html>
